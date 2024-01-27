@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    checkout scm
+                }
+            }
+        }
+
+        stage('Build and Test') {
+            steps {
+                script {
+                    // Ваши шаги по сборке и тестированию
+                    echo 'Build and test steps go here'
+                }
+            }
+        }
+
+        stage('Create Pull Request') {
+            steps {
+                script {
+                    // Ваши шаги по созданию пул-реквеста
+                    echo 'Create pull request steps go here'
+                }
+            }
+        }
+    }
+}
